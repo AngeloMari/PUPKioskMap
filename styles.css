@@ -1,0 +1,82 @@
+header{
+	margin-left: auto;
+	margin-right: auto;
+    height: 50px;
+    width: 700px;
+    display: block;
+}
+header img{
+    height: 100%;
+    width: 100%;
+}
+#top{
+	display: flex;
+	margin-left: auto;
+	margin-right: auto;
+	width: 700px;
+	height: 110px;
+	background-image: url(pics/bg.png);
+}
+#text{
+	padding-left: 20px;
+	font-family: Trebuchet ms;
+	color: #800000;
+}
+main{
+	margin-left: auto;
+	margin-right: auto;
+    height: 450px;
+    width: 700px;
+    display: flex;
+}
+#display{
+    position: absolute;
+    height: 400px;
+    width: 350px;
+}
+#wrapper{
+    width: auto;
+    height: auto;
+    text-align: center;
+    background: rgba(255, 215, 0,0.85);
+    border: 2px solid rgba(0, 0, 0, 0.65);
+}
+#wrapper img{
+    margin: 2px;
+    height: 40%;
+    width: 95%;
+}
+#imgid{
+    height: 50%;
+    width: 80%;
+}
+body{
+    background: linear-gradient(rgba(0,0,0,0.5),#F08080),url(pics/building.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 175vh;
+}
+.vicinity{
+	margin-left: auto;
+	margin-right: auto;
+	width: 700px;
+	height: 30px;
+	background-image: url(pics/bg.png);
+}
+.mapouter{
+	margin-left: auto;
+	margin-right: auto;
+	position: relative;
+	text-align: right;
+	height: 510px;
+	width: 700px;
+	background-image: url(pics/bg.png);
+}
+.gmap_canvas{
+	margin-left: auto;
+	margin-right: auto;
+	overflow: hidden;
+	background: none;
+	height: 500px;
+	width: 600px;
+}

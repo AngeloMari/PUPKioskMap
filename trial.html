@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PUP Navigator</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <script>
+        function showSceneryBox(imgSource, heading, description){
+            let d = document.getElementById("display");
+            let e =document.getElementById("body");
+            e.style.overflow = "visible";
+            document.addEventListener('mousemove', displayFollowCamera);
+            d.style.left = event.clientX + 1 + "px";
+            d.style.top = event.clientY + 1 + "px"; 
+            d.innerHTML = "<div id='wrapper'><img id='imgid' src='" + imgSource + "'>"+ "<p>" + heading + "</p>" + "<p>" + description + "</p></div>";
+        }   
+
+        function displayFollowCamera(){
+            let a = document.getElementById('display');
+            a.style.left = event.clientX + 1 + "px";
+            a.style.top = event.clientY + 1 + "px"; 
+        }
+
+        function removeSceneryBox(){
+            let a = document.getElementById("display");
+            let b = document.getElementById("body");
+            a.removeAttribute('style');
+            b.removeAttribute('style');
+            document.removeEventListener('mousemove', displayFollowCamera);
+            a.removeChild(a.childNodes[0]);  
+        }
+    </script>
+</head>
+<body id="body">
+    <header>
+        <img src="images/PUPHeader.jpg" alt="PUP Header">
+    </header>
+	<div id="top">
+		<div id="text">
+			<h1> Maps </h1>
+			<p> Main Campus </p>
+		</div>
+	</div>
+    <main>
+        <img id="pupmap" src="nimage/map.png" alt="PUP Map" usemap="#map" height="419" width="700">
+        <map name="map">
+			<area shape="circle" coords="572,252,49" href="#" alt="oval" onmouseover="showSceneryBox('pics/oval.jpg', 'PUP Oval', 'This is the PUP Track and Football Oval')", onmouseout="removeSceneryBox()">
+			<area shape="circle" coords="502,347,50" href="#" alt="oval" onmouseover="showSceneryBox('pics/oval.jpg', 'PUP Oval', 'This is the PUP Track and Football Oval')", onmouseout="removeSceneryBox()">
+			<area shape="poly" coords="552,207, 533,217, 467,308, 549,378, 616,284, 621,263" href="#" alt="oval" onmouseover="showSceneryBox('pics/oval.jpg', 'PUP Oval', 'This is the PUP Track and Football Oval')", onmouseout="removeSceneryBox()">
+			
+			<area shape="rect" coords="432,90, 493,132" href="#" alt="PUP Basketball Court" onmouseover="showSceneryBox('pics/basketball.jpg','PUP Basketball Court','Where solar boys play Basketball like they are in the NBA Finals. Some boys show-off their average skills to chicks')" onmouseout="removeSceneryBox()">
+			<area shape="rect" coords="500,91, 556,148" href="#" alt="PUP Tennis Court" onmouseover="showSceneryBox('pics/tennis.jpg','PUP Tennis Court','This is like the gymnasium, I have never seen anyone play in here')" onmouseout="removeSceneryBox()">
+			<area shape="rect" coords="481,20, 563,77" href="#" alt="gym" onmouseover="showSceneryBox('pics/gym.jpg', 'PUP Gym', 'This is the PUP Gym')", onmouseout="removeSceneryBox()">
+			<area shape="rect" coords="393, 32, 460,63" href="#" alt="PUP Pool" onmouseover="showSceneryBox('pics/pool.jpg', 'PUP Swimming Pool', 'The pool of hell. Why you Ask? imagine that pool getting used at 12 PM, poor students. Also this is only cleaned once a week, poor students')" onmouseout="removeSceneryBox()">
+			<area shape="rect" coords="442,192, 455,225" href="#" alt="mabini" onmouseover="showSceneryBox('pics/mabini.jpg', 'PUP Mabini High School', 'This is Mabini High School')", onmouseout="removeSceneryBox()">
+			<area shape="rect" coords="352,9, 367,100" href="#" alt="pe building" onmouseover="showSceneryBox('pics/pebldg.jpg', 'PUP PE Building', 'This is the PUP PE building')", onmouseout="removeSceneryBox()">
+			<area shape="poly" coords="225,21, 272,156, 302,146, 283,93, 332,77, 321,48, 274,62, 253,9 " href="#" alt="PUP library" onmouseover="showSceneryBox('pics/library.jpg','PUP Aquino Building', 'This is where PUPians look like they are reading attentively, but if you look closely, they are sleeping')" onmouseout="removeSceneryBox()">
+			<area shape="circle" coords="406,158,14" href="#" alt="obelisk" onmouseover="showSceneryBox('pics/obelisk.jpg', 'PUP Obelisk', 'This is the Obelisk')", onmouseout="removeSceneryBox()">
+			<area shape="circle" coords="386,235,11" href="#" alt="flagpole" onmouseover="showSceneryBox('pics/flagpole.jpg', 'PUP Flagpole', 'This is the PUP Flagpole')", onmouseout="removeSceneryBox()">
+			<!-- 11 -->
+			<area shape="poly" coords="256,214, 270,240, 295,233, 290,219, 285,212, 270,215" href="#" alt="PUP Amphitheatre" onmouseover="showSceneryBox('pics/ampi.jpg', 'PUP Amphitheatre', 'This is where students eat their lunch whether they brought it or they bought it. Beware of bird pooping on your head')" onmouseout="removeSceneryBox()">
+			<area shape="poly" coords="288,264, 310,302, 376,264, 373,256, 379,250, 366,229, 360,231, 357,226" href="#" alt="PUP North Wing" onmouseover="showSceneryBox('pics/northwing.jpg', 'PUP North Wing', 'This is where CCiS students wait for the approval of the Dean')" onmouseout="removeSceneryBox()">
+			<area shape="poly" coords="270,267, 286,266, 307,303, 300,314, 258,314, 251,304" href="#" alt="dome" onmouseover="showSceneryBox('pics/dome.jpg', 'PUP Dome', 'This is the PUP Main Building Dome')", onmouseout="removeSceneryBox()">
+			<area shape="poly" coords="249,302, 269,266, 201,227, 199,232, 193,229, 179,250, 185,253, 180,262" href="#" alt="West Wing" onmouseover="showSceneryBox('pics/westwing.jpg', 'PUP West Wing', 'This is the PUP main building West Wing')", onmouseout="removeSceneryBox()">
+			<!-- 16-17 -->
+			<area shape="poly" coords="365,306, 337,320, 326,345, 342,374, 367,385, 394,372, 405,346, 395,319" href="#" alt="PUP Chapel" onmouseover="showSceneryBox('pics/chapel.jpg','PUP Chapel','This is the training grounds of PUPians. You will see dancers perfecting their steps and volleyball players perfecting their serve')" onmouseout="removeSceneryBox()">
+			<!-- 19 -->
+			<area shape="rect" coords="239,408, 278,417" href="#" alt="pup cdmb" onmouseover="showSceneryBox('pics/cdmb.jpg', 'PUP Campus Development and Maintenance Building', 'This is the PUP Campus Development and Maintenance Building')", onmouseout="removeSceneryBox()">		
+			<area shape="rect" coords="188,393, 204,411" href="#" alt="ferry station" onmouseover="showSceneryBox('pics/ferry.jpg', 'PUP Ferry Station', 'This is the PUP Sta. Mesa Ferry Station')", onmouseout="removeSceneryBox()">
+			<area shape="poly" coords="149,196, 180,213, 171,229, 160,223, 152,220, 143,220, 144,217, 139,213" href="#" alt="canteen" onmouseover="showSceneryBox('pics/canteen.jpg', 'PUP Canteen', 'This is the University Canteen Sampaguita Building')", onmouseout="removeSceneryBox()">
+			<!-- 23-30 -->
+			<area shape="poly" coords="251,199, 271,195, 271,160, 302, 151, 304,103, 330,103, 346,122, 329,156, 291,207, 255,217" href="#" alt="PUP Lagoon" onmouseover="showSceneryBox('pics/lagoon.jpg', 'PUP Lagoon', 'The landmark of PUP, I do not even know why. This is also the main canteen of PUP')" onmouseout="removeSceneryBox()">
+			<!-- 32-35 -->
+			<area shape="rect" coords="617,144, 632,162" href="#" alt="pylon" onmouseover="showSceneryBox('pics/pylon.jpg', 'PUP Pylon', 'This is the PUP Pylon')", onmouseout="removeSceneryBox()">	
+			<!-- 37-40 -->
+		</map> 
+        <span id="display"></span>
+    </main>
+	<div class="vicinity">
+		<p id="text"> Vicinity Map </p>
+	</div>
+	<div class="mapouter">
+		<div class="gmap_canvas">
+			<iframe width="600" height="500" id="gmap_canvas" src="https://maps.google.com/maps?q=Polytechnic%20University%20of%20the%20Philippines,%20Anonas,%20Santa%20Mesa,%20Manila,%20Metro%20Manila&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+			<a href="https://123movies-to.org"></a><br>
+			<a href="https://www.embedgooglemap.net">put google maps on your website</a>
+		</div>
+	</div>
+</body>
+</html>
